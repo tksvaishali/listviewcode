@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- List Row Title Text Style -->
+    <style name="ListTitleStyle" >
+        <item name="android:textColor">@color/colorListTitle</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- List Row Description Text Style -->
+    <style name="ListDescriptionStyle" >
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

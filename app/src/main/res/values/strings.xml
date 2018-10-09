@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">listview</string>
+    <string name="heading">Coding Test Sample</string>
+    <string name="refresh">Refresh</string>
+    <string name="data_displayed">List data displayed below</string>
+    <string name="error_message">Error occurred.. Please check your network connection and refresh.</string>
+    <string name="fetching_data">Fetching Data...</string>
 </resources>
