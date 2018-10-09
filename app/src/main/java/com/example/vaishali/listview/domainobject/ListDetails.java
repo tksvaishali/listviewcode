@@ -2,6 +2,7 @@ package com.example.vaishali.listview.domainobject;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,11 +11,30 @@ import java.util.List;
  * ListDetails is a POJO object to store webservice response
  */
 public class ListDetails {
+
     @SerializedName("title")
     private String title;
 
     @SerializedName("rows")
     private List<ListData> rows;
+
+    /**
+     * Default Constructor
+     */
+    public ListDetails(){
+        this.title = "";
+        this.rows = new ArrayList<>();
+    }
+    /**
+     * Constructor to initialise the variables
+     *
+     * @param ptitle   Title for action bar
+     * @param listdata List of ListData
+     */
+    public ListDetails(String ptitle, List<ListData> listdata) {
+        this.title = ptitle;
+        this.rows = listdata;
+    }
 
     /**
      * Get Title
@@ -50,16 +70,5 @@ public class ListDetails {
      */
     public void setRows(List<ListData> rows) {
         this.rows = rows;
-    }
-
-    /**
-     * Constructor to initialise the variables
-     *
-     * @param ptitle   Title for action bar
-     * @param listdata List of ListData
-     */
-    public ListDetails(String ptitle, List<ListData> listdata) {
-        this.title = ptitle;
-        this.rows = listdata;
     }
 }

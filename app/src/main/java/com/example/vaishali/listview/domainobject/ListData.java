@@ -19,6 +19,19 @@ public class ListData {
     private String imageHref;
 
     /**
+     * Constructor to initialise variables
+     *
+     * @param ptitle    Title of list item
+     * @param pdesc     Description of list item
+     * @param pimageUrl Image URL of list item
+     */
+    public ListData(String ptitle, String pdesc, String pimageUrl) {
+        this.title = ptitle;
+        this.description = pdesc;
+        this.imageHref = pimageUrl;
+    }
+
+    /**
      * Get Title
      *
      * @return title of list item
@@ -70,18 +83,5 @@ public class ListData {
      */
     public void setImageHref(String imageHref) {
         this.imageHref = imageHref;
-    }
-
-    /**
-     * Constructor to initialise variables
-     *
-     * @param ptitle    Title of list item
-     * @param pdesc     Description of list item
-     * @param pimageUrl Image URL of list item
-     */
-    public ListData(String ptitle, String pdesc, String pimageUrl) {
-        this.title = ptitle;
-        this.description = pdesc;
-        this.imageHref = pimageUrl;
     }
 }
