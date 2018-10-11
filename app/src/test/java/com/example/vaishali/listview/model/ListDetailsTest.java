@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.domainobject;
+package com.example.vaishali.listview.model;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by vaishali_s
  * <p>
- * Unit Test case for testing ListDetails POJO object
+ * Unit Test case for testing ListDetails model class
  */
 public class ListDetailsTest {
 
@@ -45,6 +45,4 @@ public class ListDetailsTest {
         Assert.assertNotNull(listDetails);
         Assert.assertEquals(1, listDetails.getRows().size());
     }
-
-
 }

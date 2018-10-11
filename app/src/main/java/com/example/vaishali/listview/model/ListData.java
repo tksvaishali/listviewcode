@@ -1,11 +1,11 @@
-package com.example.vaishali.listview.domainobject;
+package com.example.vaishali.listview.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by vaishali_s.
  * <p>
- * ListData is a POJO object to store details of list item
+ * ListData is a model class to store details of list item
  */
 public class ListData {
 

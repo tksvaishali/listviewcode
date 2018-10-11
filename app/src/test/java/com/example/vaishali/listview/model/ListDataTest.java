@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.domainobject;
+package com.example.vaishali.listview.model;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Created by vaishali_s.
  * <p>
- * Unit Test case for testing ListData POJO object
+ * Unit Test case for testing ListData model object
  */
 public class ListDataTest {
     private ListData listData;

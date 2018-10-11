@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.domainobject;
+package com.example.vaishali.listview.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by vaishali_s.
  * <p>
- * ListDetails is a POJO object to store webservice response
+ * ListDetails is a model class to store webservice response
  */
 public class ListDetails {
 

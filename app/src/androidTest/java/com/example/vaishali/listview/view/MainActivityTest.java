@@ -1,4 +1,4 @@
-package com.example.vaishali.listview;
+package com.example.vaishali.listview.view;
 
 import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
@@ -6,7 +6,8 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.example.vaishali.listview.activity.MainActivity;
+import com.example.vaishali.listview.R;
+import com.example.vaishali.listview.RestServiceTestHelper;
 import com.example.vaishali.listview.network.APIConstants;
 import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
@@ -26,7 +27,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by vaishali_s.
- *
+ * <p>
  * This class provides unit test cases.
  * Test case for Success and Failure scenario is added.
  */
@@ -57,7 +58,7 @@ public class MainActivityTest {
         Intent intent = new Intent();
         mActivityRule.launchActivity(intent);
 
-        onView(withId(R.id.heading)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(ViewMatchers.withId(R.id.heading)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
         onView(withId(R.id.heading)).check(matches(withText("List data displayed below")));
     }
 

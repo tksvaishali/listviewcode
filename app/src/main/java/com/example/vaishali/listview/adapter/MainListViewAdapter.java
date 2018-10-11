@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.domainobject.ListData;
+import com.example.vaishali.listview.model.ListData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +19,9 @@ import java.util.List;
 /**
  * Created by vaishali_s.
  * <p>
- * ListViewAdapter is Base Adapter to update list with List Data values
+ * MainListViewAdapter is Base Adapter to update list with List Data values
  */
-public class ListViewAdapter extends BaseAdapter {
+public class MainListViewAdapter extends BaseAdapter {
     private List<ListData> listData;
     private Context context;
 
@@ -40,7 +40,7 @@ public class ListViewAdapter extends BaseAdapter {
      * @param context     Context
      * @param listdetails List of List data
      */
-    public ListViewAdapter(Context context, List<ListData> listdetails) {
+    public MainListViewAdapter(Context context, List<ListData> listdetails) {
         this.context = context;
         listData = new ArrayList<>();
         listData.addAll(listdetails);
