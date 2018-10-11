@@ -32,11 +32,11 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * Test case for Success and Failure scenario is added.
  */
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest {
+public class ExampleMainActivityTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class, true, false);
+    public ActivityTestRule<ExampleMainActivity> mActivityRule =
+            new ActivityTestRule<>(ExampleMainActivity.class, true, false);
 
     private MockWebServer server;
 

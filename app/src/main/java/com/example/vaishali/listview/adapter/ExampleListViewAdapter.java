@@ -19,9 +19,9 @@ import java.util.List;
 /**
  * Created by vaishali_s.
  * <p>
- * MainListViewAdapter is Base Adapter to update list with List Data values
+ * ExampleListViewAdapter is Base Adapter to update list with List Data values
  */
-public class MainListViewAdapter extends BaseAdapter {
+public class ExampleListViewAdapter extends BaseAdapter {
     private List<ListData> listData;
     private Context context;
 
@@ -40,7 +40,7 @@ public class MainListViewAdapter extends BaseAdapter {
      * @param context     Context
      * @param listdetails List of List data
      */
-    public MainListViewAdapter(Context context, List<ListData> listdetails) {
+    public ExampleListViewAdapter(Context context, List<ListData> listdetails) {
         this.context = context;
         listData = new ArrayList<>();
         listData.addAll(listdetails);

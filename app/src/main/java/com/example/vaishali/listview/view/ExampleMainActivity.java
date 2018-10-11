@@ -8,26 +8,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.adapter.MainListViewAdapter;
+import com.example.vaishali.listview.adapter.ExampleListViewAdapter;
 import com.example.vaishali.listview.model.ListData;
 import com.example.vaishali.listview.model.ListDetails;
-import com.example.vaishali.listview.presenter.MainPresenter;
+import com.example.vaishali.listview.presenter.ExampleMainPresenter;
 
 import java.util.List;
 
 /**
  * Created by vaishali_s.
  * <p>
- * The MainActivity class is first activity which will display List and refresh button.
+ * The ExampleMainActivity class is first activity which will display List and refresh button.
  * Refresh button is used to refresh the list.
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, MainView {
+public class ExampleMainActivity extends AppCompatActivity implements View.OnClickListener, ExampleMainView {
     private ListView listView;
     private Button btnRefresh;
     private TextView txtHeading;
-    private MainListViewAdapter adapter;
+    private ExampleListViewAdapter adapter;
 
-    private MainPresenter presenter;
+    private ExampleMainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initUI();
 
-        presenter = new MainPresenter(this);
+        presenter = new ExampleMainPresenter(this);
         presenter.callWebservice();
     }
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param listData List of ListItem Data
      */
     private void updateList(List<ListData> listData) {
-        adapter = new MainListViewAdapter(this, listData);
+        adapter = new ExampleListViewAdapter(this, listData);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
