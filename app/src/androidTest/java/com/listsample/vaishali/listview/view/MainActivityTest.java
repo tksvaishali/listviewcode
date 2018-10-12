@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.view;
+package com.listsample.vaishali.listview.view;
 
 import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
@@ -6,9 +6,9 @@ import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.RestServiceTestHelper;
-import com.example.vaishali.listview.network.APIConstants;
+import com.listsample.vaishali.listview.R;
+import com.listsample.vaishali.listview.RestServiceTestHelper;
+import com.listsample.vaishali.listview.network.APIConstants;
 import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
 

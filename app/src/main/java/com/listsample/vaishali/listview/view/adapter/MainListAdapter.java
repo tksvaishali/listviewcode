@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.view.adapter;
+package com.listsample.vaishali.listview.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.model.ListData;
+import com.listsample.vaishali.listview.R;
+import com.listsample.vaishali.listview.model.ListData;
 
 import java.util.ArrayList;
 import java.util.List;

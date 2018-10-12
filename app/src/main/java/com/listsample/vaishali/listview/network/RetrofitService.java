@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.network;
+package com.listsample.vaishali.listview.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

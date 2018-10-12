@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.model;
+package com.listsample.vaishali.listview.model;
 
 import com.google.gson.annotations.SerializedName;
 

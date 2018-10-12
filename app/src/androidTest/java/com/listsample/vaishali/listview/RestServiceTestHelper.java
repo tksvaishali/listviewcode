@@ -1,4 +1,4 @@
-package com.example.vaishali.listview;
+package com.listsample.vaishali.listview;
 
 import android.content.Context;
 

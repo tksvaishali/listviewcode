@@ -1,8 +1,8 @@
-package com.example.vaishali.listview.presenter;
+package com.listsample.vaishali.listview.presenter;
 
-import com.example.vaishali.listview.view.MainViewInterface;
-import com.example.vaishali.listview.model.ListDetails;
-import com.example.vaishali.listview.network.RetrofitService;
+import com.listsample.vaishali.listview.view.MainViewInterface;
+import com.listsample.vaishali.listview.model.ListDetails;
+import com.listsample.vaishali.listview.network.RetrofitService;
 
 import retrofit2.Call;
 import retrofit2.Callback;

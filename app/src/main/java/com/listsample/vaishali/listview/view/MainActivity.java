@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.view;
+package com.listsample.vaishali.listview.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.model.ListData;
-import com.example.vaishali.listview.model.ListDetails;
-import com.example.vaishali.listview.presenter.MainPresenter;
-import com.example.vaishali.listview.view.adapter.MainListAdapter;
+import com.listsample.vaishali.listview.R;
+import com.listsample.vaishali.listview.model.ListData;
+import com.listsample.vaishali.listview.model.ListDetails;
+import com.listsample.vaishali.listview.presenter.MainPresenter;
+import com.listsample.vaishali.listview.view.adapter.MainListAdapter;
 
 import java.util.List;
 

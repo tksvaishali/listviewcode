@@ -1,6 +1,6 @@
-package com.example.vaishali.listview.network;
+package com.listsample.vaishali.listview.network;
 
-import com.example.vaishali.listview.model.ListDetails;
+import com.listsample.vaishali.listview.model.ListDetails;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

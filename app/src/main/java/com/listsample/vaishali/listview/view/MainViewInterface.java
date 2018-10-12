@@ -1,6 +1,6 @@
-package com.example.vaishali.listview.view;
+package com.listsample.vaishali.listview.view;
 
-import com.example.vaishali.listview.model.ListDetails;
+import com.listsample.vaishali.listview.model.ListDetails;
 
 /**
  * Created by vaishali_s.

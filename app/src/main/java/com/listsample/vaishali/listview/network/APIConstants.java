@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.network;
+package com.listsample.vaishali.listview.network;
 
 /**
  * Created by vaishali_s.
