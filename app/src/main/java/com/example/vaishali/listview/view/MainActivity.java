@@ -8,26 +8,25 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.vaishali.listview.R;
-import com.example.vaishali.listview.adapter.ExampleListViewAdapter;
 import com.example.vaishali.listview.model.ListData;
 import com.example.vaishali.listview.model.ListDetails;
-import com.example.vaishali.listview.presenter.ExampleMainPresenter;
+import com.example.vaishali.listview.presenter.MainPresenter;
+import com.example.vaishali.listview.view.adapter.MainListAdapter;
 
 import java.util.List;
 
 /**
  * Created by vaishali_s.
  * <p>
- * The ExampleMainActivity class is first activity which will display List and refresh button.
+ * The MainActivity class is first activity which will display List and refresh button.
  * Refresh button is used to refresh the list.
  */
-public class ExampleMainActivity extends AppCompatActivity implements View.OnClickListener, ExampleMainView {
-    private ListView listView;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, MainViewInterface {
+    private ListView lvMainList;
     private Button btnRefresh;
-    private TextView txtHeading;
-    private ExampleListViewAdapter adapter;
-
-    private ExampleMainPresenter presenter;
+    private TextView tvHeading;
+    private MainListAdapter mMainListAdapter;
+    private MainPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +34,17 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_main);
         initUI();
 
-        presenter = new ExampleMainPresenter(this);
-        presenter.callWebservice();
+        mPresenter = new MainPresenter(this);
+        mPresenter.callWebservice();
     }
 
     /**
      * This method will initialise UI elements and add listener
      */
     private void initUI() {
-        listView = findViewById(R.id.listview);
-        btnRefresh = findViewById(R.id.refresh);
-        txtHeading = findViewById(R.id.heading);
+        lvMainList = findViewById(R.id.lv_mainlist);
+        btnRefresh = findViewById(R.id.btn_refresh);
+        tvHeading = findViewById(R.id.tv_heading);
 
         btnRefresh.setOnClickListener(this);
     }
@@ -56,9 +55,9 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
      * @param listData List of ListItem Data
      */
     private void updateList(List<ListData> listData) {
-        adapter = new ExampleListViewAdapter(this, listData);
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        mMainListAdapter = new MainListAdapter(this, listData);
+        lvMainList.setAdapter(mMainListAdapter);
+        mMainListAdapter.notifyDataSetChanged();
     }
 
     /**
@@ -73,7 +72,7 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         if (view == btnRefresh) {
-            presenter.callWebservice();
+            mPresenter.callWebservice();
         }
     }
 
@@ -82,7 +81,7 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
      */
     @Override
     public void displayErrorMessage() {
-        txtHeading.setText(getString(R.string.error_message));
+        tvHeading.setText(getString(R.string.error_message));
     }
 
     /**
@@ -90,7 +89,7 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
      */
     @Override
     public void updateHeadingText() {
-        txtHeading.setText(getString(R.string.fetching_data));
+        tvHeading.setText(getString(R.string.fetching_data));
     }
 
     /**
@@ -100,7 +99,7 @@ public class ExampleMainActivity extends AppCompatActivity implements View.OnCli
      */
     @Override
     public void updateListDetails(ListDetails listDetails) {
-        txtHeading.setText(getString(R.string.data_displayed));
+        tvHeading.setText(getString(R.string.data_displayed));
         updateActionBarTitle(listDetails.getTitle());
         updateList(listDetails.getRows());
     }

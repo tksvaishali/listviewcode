@@ -13,27 +13,27 @@ import java.util.List;
 public class ListDetails {
 
     @SerializedName("title")
-    private String title;
+    private String mTitle;
 
     @SerializedName("rows")
-    private List<ListData> rows;
+    private List<ListData> mRows;
 
     /**
      * Default Constructor
      */
     public ListDetails(){
-        this.title = "";
-        this.rows = new ArrayList<>();
+        this.mTitle = "";
+        this.mRows = new ArrayList<>();
     }
     /**
      * Constructor to initialise the variables
      *
-     * @param ptitle   Title for action bar
-     * @param listdata List of ListData
+     * @param pTitle   Title for action bar
+     * @param pListData List of ListData
      */
-    public ListDetails(String ptitle, List<ListData> listdata) {
-        this.title = ptitle;
-        this.rows = listdata;
+    public ListDetails(String pTitle, List<ListData> pListData) {
+        this.mTitle = pTitle;
+        this.mRows = pListData;
     }
 
     /**
@@ -42,7 +42,7 @@ public class ListDetails {
      * @return title for screen action bar
      */
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     /**
@@ -51,7 +51,7 @@ public class ListDetails {
      * @return set title text
      */
     public void setTitle(String title) {
-        this.title = title;
+        this.mTitle = title;
     }
 
     /**
@@ -60,15 +60,15 @@ public class ListDetails {
      * @return List<ListData>
      */
     public List<ListData> getRows() {
-        return rows;
+        return mRows;
     }
 
     /**
      * Set List<ListData> to rows object
      *
-     * @param rows List of ListData
+     * @param pRowsList List of ListData
      */
-    public void setRows(List<ListData> rows) {
-        this.rows = rows;
+    public void setRows(List<ListData> pRowsList) {
+        this.mRows = pRowsList;
     }
 }

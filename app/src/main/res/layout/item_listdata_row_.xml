@@ -6,7 +6,7 @@
     android:padding="@dimen/listview_padding">
 
     <TextView
-        android:id="@+id/list_title"
+        android:id="@+id/tv_title"
         style="@style/ListTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -18,16 +18,16 @@
         android:layout_marginTop="@dimen/vertical_margin">
 
         <TextView
-            android:id="@+id/list_description"
+            android:id="@+id/tv_description"
             style="@style/ListDescriptionStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginRight="@dimen/listitem_margin"
-            android:layout_toLeftOf="@+id/imageview" />
+            android:layout_toLeftOf="@+id/iv_imagehref" />
 
         <ImageView
-            android:id="@+id/imageview"
+            android:id="@+id/iv_imagehref"
             android:layout_width="@dimen/imageview_dimension"
             android:layout_height="@dimen/imageview_dimension"
             android:layout_alignParentRight="true"

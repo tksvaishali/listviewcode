@@ -32,11 +32,11 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * Test case for Success and Failure scenario is added.
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleMainActivityTest {
+public class MainActivityTest {
 
     @Rule
-    public ActivityTestRule<ExampleMainActivity> mActivityRule =
-            new ActivityTestRule<>(ExampleMainActivity.class, true, false);
+    public ActivityTestRule<MainActivity> mActivityRule =
+            new ActivityTestRule<>(MainActivity.class, true, false);
 
     private MockWebServer server;
 
@@ -58,8 +58,8 @@ public class ExampleMainActivityTest {
         Intent intent = new Intent();
         mActivityRule.launchActivity(intent);
 
-        onView(ViewMatchers.withId(R.id.heading)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
-        onView(withId(R.id.heading)).check(matches(withText("List data displayed below")));
+        onView(ViewMatchers.withId(R.id.tv_heading)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
+        onView(withId(R.id.tv_heading)).check(matches(withText("List data displayed below")));
     }
 
     @Test
@@ -73,8 +73,8 @@ public class ExampleMainActivityTest {
         Intent intent = new Intent();
         mActivityRule.launchActivity(intent);
 
-        onView(withId(R.id.heading)).check(matches(isDisplayed()));
-        onView(withId(R.id.heading)).check(matches(withText("Error occurred.. Please check your network connection and refresh.")));
+        onView(withId(R.id.tv_heading)).check(matches(isDisplayed()));
+        onView(withId(R.id.tv_heading)).check(matches(withText("Error occurred.. Please check your network connection and refresh.")));
     }
 
     @After

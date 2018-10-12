@@ -5,9 +5,9 @@ import com.example.vaishali.listview.model.ListDetails;
 /**
  * Created by vaishali_s.
  * <p>
- * This class represents ExampleMainView Interface
+ * This class represents MainViewInterface Interface
  */
-public interface ExampleMainView {
+public interface MainViewInterface {
 
     void displayErrorMessage();
 

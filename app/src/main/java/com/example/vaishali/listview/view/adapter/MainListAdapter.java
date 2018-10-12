@@ -1,4 +1,4 @@
-package com.example.vaishali.listview.adapter;
+package com.example.vaishali.listview.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,11 +19,11 @@ import java.util.List;
 /**
  * Created by vaishali_s.
  * <p>
- * ExampleListViewAdapter is Base Adapter to update list with List Data values
+ * MainListAdapter is Base Adapter to update list with List Data values
  */
-public class ExampleListViewAdapter extends BaseAdapter {
-    private List<ListData> listData;
-    private Context context;
+public class MainListAdapter extends BaseAdapter {
+    private List<ListData> mListData;
+    private Context mContext;
 
     /**
      * ViewHolder acts as holder to refer the list row elements
@@ -40,20 +40,20 @@ public class ExampleListViewAdapter extends BaseAdapter {
      * @param context     Context
      * @param listdetails List of List data
      */
-    public ExampleListViewAdapter(Context context, List<ListData> listdetails) {
-        this.context = context;
-        listData = new ArrayList<>();
-        listData.addAll(listdetails);
+    public MainListAdapter(Context context, List<ListData> listdetails) {
+        this.mContext = context;
+        mListData = new ArrayList<>();
+        mListData.addAll(listdetails);
     }
 
     @Override
     public int getCount() {
-        return listData.size();
+        return mListData.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return listData.get(position);
+        return mListData.get(position);
     }
 
     @Override
@@ -68,12 +68,12 @@ public class ExampleListViewAdapter extends BaseAdapter {
 
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.list_row_item_layout, parent, false);
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(R.layout.item_listdata_row_, parent, false);
 
-            viewHolder.txtTitle = (TextView) convertView.findViewById(R.id.list_title);
-            viewHolder.txtDescription = (TextView) convertView.findViewById(R.id.list_description);
-            viewHolder.imgImage = (ImageView) convertView.findViewById(R.id.imageview);
+            viewHolder.txtTitle = (TextView) convertView.findViewById(R.id.tv_title);
+            viewHolder.txtDescription = (TextView) convertView.findViewById(R.id.tv_description);
+            viewHolder.imgImage = (ImageView) convertView.findViewById(R.id.iv_imagehref);
 
             result = convertView;
             convertView.setTag(viewHolder);
@@ -90,7 +90,7 @@ public class ExampleListViewAdapter extends BaseAdapter {
         /**
          * Glide to efficiently load images in imageview
          */
-        Glide.with(context)
+        Glide.with(mContext)
                 .load(listData.getImageHref())
                 .placeholder(R.mipmap.ic_launcher)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

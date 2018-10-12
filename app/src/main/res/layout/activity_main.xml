@@ -4,25 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.vaishali.listview.view.ExampleMainActivity">
+    tools:mContext="com.example.vaishali.listview.view.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/heading"
+            android:id="@+id/tv_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_margin="@dimen/activity_margin"
-            android:layout_toLeftOf="@+id/refresh"
+            android:layout_toLeftOf="@+id/btn_refresh"
             android:text="@string/heading" />
 
         <Button
-            android:id="@+id/refresh"
+            android:id="@+id/btn_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -33,7 +33,7 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/lv_mainlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/vertical_margin" />

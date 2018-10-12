@@ -1,6 +1,6 @@
 package com.example.vaishali.listview.presenter;
 
-import com.example.vaishali.listview.view.ExampleMainView;
+import com.example.vaishali.listview.view.MainViewInterface;
 import com.example.vaishali.listview.model.ListDetails;
 import com.example.vaishali.listview.network.RetrofitService;
 
@@ -11,13 +11,13 @@ import retrofit2.Response;
 /**
  * Created by vaishali_s.
  * <p>
- * ExampleMainPresenter class is the Presenter between view and model.
+ * MainPresenter class is the Presenter between view and model.
  */
-public class ExampleMainPresenter {
+public class MainPresenter {
     /**
-     * ExampleMainView Instance
+     * MainViewInterface Instance
      */
-    private ExampleMainView mView;
+    private MainViewInterface mView;
 
     /**
      * RetrofitService Instance
@@ -25,11 +25,11 @@ public class ExampleMainPresenter {
     private RetrofitService mRetrofitService;
 
     /**
-     * Constructor which has ExampleMainView Instance parameter
+     * Constructor which has MainViewInterface Instance parameter
      *
-     * @param view ExampleMainView instance
+     * @param view MainViewInterface instance
      */
-    public ExampleMainPresenter(ExampleMainView view) {
+    public MainPresenter(MainViewInterface view) {
         this.mView = view;
         if (this.mRetrofitService == null) {
             this.mRetrofitService = new RetrofitService();

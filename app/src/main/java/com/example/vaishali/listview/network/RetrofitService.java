@@ -10,21 +10,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitService {
 
-    private Retrofit retrofit;
+    private Retrofit mRetrofit;
 
     /**
      * This method creates a new instance of the API interface.
      * @return API Interface
      */
     public APIInterface getAPIInterface() {
-        if (retrofit == null) {
-            retrofit = new Retrofit
+        if (mRetrofit == null) {
+            mRetrofit = new Retrofit
                     .Builder()
                     .baseUrl(APIConstants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 
-        return retrofit.create(APIInterface.class);
+        return mRetrofit.create(APIInterface.class);
     }
 }

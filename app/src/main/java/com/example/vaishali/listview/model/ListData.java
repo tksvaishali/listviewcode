@@ -10,25 +10,25 @@ import com.google.gson.annotations.SerializedName;
 public class ListData {
 
     @SerializedName("title")
-    private String title;
+    private String mTitle;
 
     @SerializedName("description")
-    private String description;
+    private String mDescription;
 
     @SerializedName("imageHref")
-    private String imageHref;
+    private String mImageHref;
 
     /**
      * Constructor to initialise variables
      *
-     * @param ptitle    Title of list item
-     * @param pdesc     Description of list item
-     * @param pimageUrl Image URL of list item
+     * @param pTitle    Title of list item
+     * @param pDesc     Description of list item
+     * @param pImageUrl Image URL of list item
      */
-    public ListData(String ptitle, String pdesc, String pimageUrl) {
-        this.title = ptitle;
-        this.description = pdesc;
-        this.imageHref = pimageUrl;
+    public ListData(String pTitle, String pDesc, String pImageUrl) {
+        this.mTitle = pTitle;
+        this.mDescription = pDesc;
+        this.mImageHref = pImageUrl;
     }
 
     /**
@@ -37,16 +37,16 @@ public class ListData {
      * @return title of list item
      */
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     /**
      * Set Title
      *
-     * @param title set title text
+     * @param mTitle title text
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String mTitle) {
+        this.mTitle = mTitle;
     }
 
     /**
@@ -55,16 +55,16 @@ public class ListData {
      * @return description of list item
      */
     public String getDescription() {
-        return description;
+        return mDescription;
     }
 
     /**
      * Set the description
      *
-     * @param description set the description text
+     * @param mDescription the description text
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String mDescription) {
+        this.mDescription = mDescription;
     }
 
     /**
@@ -73,15 +73,15 @@ public class ListData {
      * @return image URL
      */
     public String getImageHref() {
-        return imageHref;
+        return mImageHref;
     }
 
     /**
      * Set Image URL
      *
-     * @param imageHref sets the image URL
+     * @param mImageHref the image URL
      */
-    public void setImageHref(String imageHref) {
-        this.imageHref = imageHref;
+    public void setImageHref(String mImageHref) {
+        this.mImageHref = mImageHref;
     }
 }
