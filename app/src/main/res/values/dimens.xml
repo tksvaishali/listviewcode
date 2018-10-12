@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_margin">5dp</dimen>
+    <dimen name="listview_padding">10dp</dimen>
+    <dimen name="vertical_margin">5dp</dimen>
+    <dimen name="listitem_margin">10dp</dimen>
+    <dimen name="imageview_dimension">80dp</dimen>
+</resources>

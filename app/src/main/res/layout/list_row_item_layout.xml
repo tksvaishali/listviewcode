@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="@dimen/listview_padding">
 
     <TextView
         android:id="@+id/list_title"
@@ -15,7 +15,7 @@
         android:id="@+id/rl_listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="@dimen/vertical_margin">
 
         <TextView
             android:id="@+id/list_description"
@@ -23,13 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/listitem_margin"
             android:layout_toLeftOf="@+id/imageview" />
 
         <ImageView
             android:id="@+id/imageview"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/imageview_dimension"
+            android:layout_height="@dimen/imageview_dimension"
             android:layout_alignParentRight="true"
             android:src="@mipmap/ic_launcher" />
     </RelativeLayout>
