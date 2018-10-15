@@ -1,9 +1,8 @@
 package com.listsample.vaishali.listview.view;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,15 +17,14 @@ import java.util.List;
 /**
  * Created by vaishali_s.
  * <p>
- * The MainActivity class is first activity which will display List and refresh button.
- * Refresh button is used to refresh the list.
+ * The MainActivity class is first activity which will call webservice and display the data in the List
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, MainViewInterface {
+public class MainActivity extends AppCompatActivity implements MainViewInterface, SwipeRefreshLayout.OnRefreshListener {
     private ListView lvMainList;
-    private Button btnRefresh;
     private TextView tvHeading;
     private MainListAdapter mMainListAdapter;
     private MainPresenter mPresenter;
+    private SwipeRefreshLayout mPulltoRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void initUI() {
         lvMainList = findViewById(R.id.lv_mainlist);
-        btnRefresh = findViewById(R.id.btn_refresh);
         tvHeading = findViewById(R.id.tv_heading);
+        mPulltoRefresh = findViewById(R.id.srl_pulltorefresh);
 
-        btnRefresh.setOnClickListener(this);
+        mPulltoRefresh.setOnRefreshListener(this);
     }
 
     /**
@@ -67,13 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void updateActionBarTitle(String title) {
         setTitle(title);
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == btnRefresh) {
-            mPresenter.callWebservice();
-        }
     }
 
     /**
@@ -102,5 +93,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvHeading.setText(getString(R.string.data_displayed));
         updateActionBarTitle(listDetails.getTitle());
         updateList(listDetails.getRows());
+    }
+
+    /**
+     * Callback for pull to refresh
+     */
+    @Override
+    public void onRefresh() {
+        mPresenter.callWebservice();
+        mPulltoRefresh.setRefreshing(false);
     }
 }

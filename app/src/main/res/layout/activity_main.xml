@@ -18,24 +18,19 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_margin="@dimen/activity_margin"
-            android:layout_toLeftOf="@+id/btn_refresh"
             android:text="@string/heading" />
-
-        <Button
-            android:id="@+id/btn_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/activity_margin"
-            android:background="@color/colorPrimaryDark"
-            android:text="@string/refresh"
-            android:textColor="@color/colorWhite" />
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/lv_mainlist"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_pulltorefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/vertical_margin" />
+        android:layout_marginTop="@dimen/vertical_margin">
 
+        <ListView
+            android:id="@+id/lv_mainlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
