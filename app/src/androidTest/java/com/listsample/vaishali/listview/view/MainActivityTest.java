@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.widget.TextView;
 
 import com.listsample.vaishali.listview.R;
 import com.listsample.vaishali.listview.RestServiceTestHelper;
@@ -19,11 +20,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withParent;
+import static android.support.test.espresso.matcher.ViewMatchers.withResourceName;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.allOf;
+import static org.hamcrest.CoreMatchers.instanceOf;
 
 /**
  * Created by vaishali_s.
@@ -58,8 +64,10 @@ public class MainActivityTest {
         Intent intent = new Intent();
         mActivityRule.launchActivity(intent);
 
-        onView(ViewMatchers.withId(R.id.tv_heading)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
-        onView(withId(R.id.tv_heading)).check(matches(withText("List data displayed below")));
+
+        onView(allOf(instanceOf(TextView.class),
+                withParent(withResourceName("action_bar"))))
+                .check(matches(withText("About Canada")));
     }
 
     @Test
@@ -73,8 +81,8 @@ public class MainActivityTest {
         Intent intent = new Intent();
         mActivityRule.launchActivity(intent);
 
-        onView(withId(R.id.tv_heading)).check(matches(isDisplayed()));
-        onView(withId(R.id.tv_heading)).check(matches(withText("Error occurred.. Please check your network connection and refresh.")));
+        onView(withText("Error occurred.. Please check your network connection and refresh.")).check(matches(isDisplayed()));
+        onView(withId(android.R.id.button1)).perform(click());
     }
 
     @After

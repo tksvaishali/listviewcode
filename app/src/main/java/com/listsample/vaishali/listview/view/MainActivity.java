@@ -1,10 +1,11 @@
 package com.listsample.vaishali.listview.view;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.listsample.vaishali.listview.R;
 import com.listsample.vaishali.listview.model.ListData;
@@ -25,9 +26,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements MainViewInterface, SwipeRefreshLayout.OnRefreshListener {
     @BindView(R.id.lv_mainlist)
     ListView lvMainList;
-
-    @BindView(R.id.tv_heading)
-    TextView tvHeading;
 
     @BindView(R.id.srl_pulltorefresh)
     SwipeRefreshLayout mPulltoRefresh;
@@ -78,15 +76,23 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
      */
     @Override
     public void displayErrorMessage() {
-        tvHeading.setText(getString(R.string.error_message));
+        displayErrorDialog();
     }
 
     /**
-     * This method will update the description text in heading textview
+     * Method to display error dialog
      */
-    @Override
-    public void updateHeadingText() {
-        tvHeading.setText(getString(R.string.fetching_data));
+    private void displayErrorDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.error_message));
+        builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     /**
@@ -96,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
      */
     @Override
     public void updateListDetails(ListDetails listDetails) {
-        tvHeading.setText(getString(R.string.data_displayed));
         updateActionBarTitle(listDetails.getTitle());
         updateList(listDetails.getRows());
     }

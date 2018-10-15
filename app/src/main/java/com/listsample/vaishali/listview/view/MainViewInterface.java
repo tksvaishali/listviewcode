@@ -8,10 +8,7 @@ import com.listsample.vaishali.listview.model.ListDetails;
  * This class represents MainViewInterface Interface
  */
 public interface MainViewInterface {
-
     void displayErrorMessage();
-
-    void updateHeadingText();
 
     void updateListDetails(ListDetails listDetails);
 }
