@@ -16,6 +16,9 @@ import com.listsample.vaishali.listview.model.ListData;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by vaishali_s.
  * <p>
@@ -28,10 +31,18 @@ public class MainListAdapter extends BaseAdapter {
     /**
      * ViewHolder acts as holder to refer the list row elements
      */
-    private static class ViewHolder {
+    class ViewHolder {
+        @BindView(R.id.tv_title)
         TextView txtTitle;
+        @BindView(R.id.tv_description)
         TextView txtDescription;
+        @BindView(R.id.iv_imagehref)
         ImageView imgImage;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+
     }
 
     /**
@@ -67,14 +78,9 @@ public class MainListAdapter extends BaseAdapter {
         final View result;
 
         if (convertView == null) {
-            viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(mContext);
             convertView = inflater.inflate(R.layout.item_listdata_row_, parent, false);
-
-            viewHolder.txtTitle = (TextView) convertView.findViewById(R.id.tv_title);
-            viewHolder.txtDescription = (TextView) convertView.findViewById(R.id.tv_description);
-            viewHolder.imgImage = (ImageView) convertView.findViewById(R.id.iv_imagehref);
-
+            viewHolder = new ViewHolder(convertView);
             result = convertView;
             convertView.setTag(viewHolder);
 

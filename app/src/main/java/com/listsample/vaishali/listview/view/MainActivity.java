@@ -14,36 +14,42 @@ import com.listsample.vaishali.listview.view.adapter.MainListAdapter;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by vaishali_s.
  * <p>
  * The MainActivity class is first activity which will call webservice and display the data in the List
  */
 public class MainActivity extends AppCompatActivity implements MainViewInterface, SwipeRefreshLayout.OnRefreshListener {
-    private ListView lvMainList;
-    private TextView tvHeading;
+    @BindView(R.id.lv_mainlist)
+    ListView lvMainList;
+
+    @BindView(R.id.tv_heading)
+    TextView tvHeading;
+
+    @BindView(R.id.srl_pulltorefresh)
+    SwipeRefreshLayout mPulltoRefresh;
+
     private MainListAdapter mMainListAdapter;
     private MainPresenter mPresenter;
-    private SwipeRefreshLayout mPulltoRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initUI();
+        ButterKnife.bind(this);
+        addListener();
 
         mPresenter = new MainPresenter(this);
         mPresenter.callWebservice();
     }
 
     /**
-     * This method will initialise UI elements and add listener
+     * This method will add listener
      */
-    private void initUI() {
-        lvMainList = findViewById(R.id.lv_mainlist);
-        tvHeading = findViewById(R.id.tv_heading);
-        mPulltoRefresh = findViewById(R.id.srl_pulltorefresh);
-
+    private void addListener() {
         mPulltoRefresh.setOnRefreshListener(this);
     }
 
